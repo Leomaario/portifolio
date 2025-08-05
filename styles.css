@@ -649,7 +649,19 @@ li a {
 }
 
 li a:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-2px);
     color: var(--accent-primary);
+    /* Cor de destaque no hover */
+    transform: translateY(-2px);
+    /* Pequena elevação no hover */
+    text-decoration: underline;
+    /* Sublinhado no hover */
+    text-underline-offset: 4px;
+    /* Espaçamento do sublinhado */
+    text-decoration-thickness: 2px;
+    /* Espessura do sublinhado */
+    text-decoration-color: var(--accent-primary);
 }
 
 
@@ -701,9 +713,196 @@ li a:hover {
     /* Texto do link ativo também é mais forte */
 }
 
+/* O fundo escuro que cobre a tela toda */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+    /* Começa escondido */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Classe que o JS vai adicionar para mostrar o modal */
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* A caixa de conteúdo do modal */
+.modal-content {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* O botão de fechar (X) */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--accent-primary);
+}
+
+/* --- Estilos para o conteúdo dentro do modal (para garantir a formatação) --- */
+
+#modal-body .job-title {
+    font-size: 1.8rem;
+    /* Ajuste de tamanho para o modal */
+    color: var(--accent-primary);
+}
+
+#modal-body .company,
+#modal-body .period {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+#modal-body .job-description {
+    margin-top: 1.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+#modal-body .job-description li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+#modal-body .job-description li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}
+
+
+/* --- Comportamento Padrão (Desktop) --- */
+
+/* Por padrão, o botão "Ver mais..." fica escondido em telas grandes */
+.btn-ver-mais {
+    display: none;
+}
+
+/* Por padrão, os itens de detalhe ficam visíveis (caso você remova o style="display:none" do HTML) */
+.detail-item {
+    display: list-item;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+    .detail-item {
+        display: none !important;
+    }
+
+    .btn-ver-mais {
+        /* Resetando estilos padrão do navegador */
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        /* Estilos de texto */
+        font-family: inherit;
+        /* Usa a mesma fonte do resto do site */
+        font-size: 0.9rem;
+        /* Tamanho da fonte */
+        font-weight: 600;
+        color: var(--accent-primary);
+        text-align: left;
+        /* Garante alinhamento */
+        /* Funcionalidade e transição */
+        cursor: pointer;
+        margin-top: 1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .btn-ver-mais:hover {
+        color: var(--text-primary);
+        text-decoration: underline;
+    }
+
+    .timeline-content {
+        padding-bottom: 1rem;
+    }
+
+    .job-description {
+        display: block;
+        margin-top: 1rem;
+        padding-left: 0;
+    }
+
+    .job-description li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+
+    .container {
+        padding: 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -737,6 +936,13 @@ li a:hover {
         padding-left: 50px;
     }
 
+    .timeline-content {
+        display: flex;
+        padding: 1.5rem;
+        flex-direction: column;
+
+    }
+
     .hero-links {
         gap: 1rem;
     }
@@ -749,6 +955,11 @@ li a:hover {
 }
 
 @media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
     .container {
         padding: 0 15px;
     }
