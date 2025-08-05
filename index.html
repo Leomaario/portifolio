@@ -4,13 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leomário Santos - Desenvolvedor Backend</title>
+    <title>Leomário </title>
+    <!-- icone de portifolio -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <button class="button-thema" id="theme-toggle">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
     <!-- Seção 1: Hero Section -->
     <section id="hero" class="hero-section">
         <div class="hero-content">
@@ -21,6 +40,7 @@
                 Com foco em código limpo, arquitetura em camadas e microsserviços,
                 estou pronto para construir a próxima geração de aplicações.
             </p>
+
             <div class="hero-links">
                 <a href="https://linkedin.com/in/leomario-santos" target="_blank" class="social-link">
                     <i class="fab fa-linkedin"></i>
@@ -28,7 +48,7 @@
                 <a href="https://github.com/leomario-santos" target="_blank" class="social-link">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:leomario@email.com" class="social-link">
+                <a href="mailto:leomariodev@outlook.com" target="_blank" class="social-link">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -48,7 +68,7 @@
                     <div class="timeline-content">
                         <h3 class="job-title">Backend Developer</h3>
                         <h4 class="company">SouzaLink</h4>
-                        <p class="period">Dezembro/2023 - Presente</p>
+                        <p class="period">Março/2025 - Presente</p>
                         <ul class="job-description">
                             <li>Desenvolvimento de backend seguindo arquitetura em camadas para garantir
                                 manutenibilidade e escalabilidade</li>
@@ -84,54 +104,47 @@
             <h2 class="section-title">Projetos em Destaque</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-film"></i>
-                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Backend - SouzaLink-Coach</h3>
-                        <p class="project-subtitle">API para Streaming de Capacitações/cursos</p>
+                        <h3 class="project-title">Backend - SouzaLink</h3>
+                        <p class="project-subtitle">Plataforma de Coaching</p>
                         <p class="project-subtitle">
                             <a class="project-subtitle" href="https://souzalink-coach.onrender.com/"
-                                target="_blank">Acessar Site (usuario: teste; Senha: SouTestador123)</a>
+                                target="_blank">Acessar</a>
                         </p>
                         <p class="project-description">
-                            API RESTful completa construída com Java e Spring Boot para gerenciar
-                            catálogos de vídeos, usuários e autenticação {CRUD COMPLETO}.
+                            API RESTful desenvolvida com Java e Spring Boot, seguindo práticas de Clean Code e SOLID.
+                            (usuario: teste; Senha: SouTestador123)
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">JPA/Hibernate</span>
-                            <span class="tech-tag">JWT</span>
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
-                        <a href="https://github.com/leomario-santos/streamMovie" target="_blank" class="project-link">
+                        <a href="https://github.com/Leomaario/E-LearningPlatformAPI" target="_blank"
+                            class="project-link">
                             <i class="fab fa-github"></i> Ver no GitHub
                         </a>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-users"></i>
-                    </div>
                     <div class="project-content">
                         <h3 class="project-title">Front End - SouzaLink-Coach</h3>
                         <p class="project-subtitle">Plataforma de Coaching</p>
                         <p class="project-subtitle">
                             <a class="project-subtitle" href="https://souzalink-coach.onrender.com/"
-                                target="_blank">Acessar Site (usuario: teste; Senha: SouTestador123)</a>
+                                target="_blank">Acessar Site</a>
                         </p>
                         <p class="project-description">
                             Aplicação full-stack para conectar coaches e clientes,
-                            com funcionalidades de gestão.
+                            com funcionalidades de gestão.(usuario: teste; Senha: SouTestador123)
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">HTML/CSS</span>
                         </div>
-                        <a href="https://github.com/leomario-santos/SouzaLink-Coach" target="_blank"
-                            class="project-link">
+                        <a href="https://github.com/Leomaario/SouzaLink-Coach" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> Ver no GitHub
                         </a>
                     </div>
@@ -284,7 +297,7 @@
                         <span>Ruy Barbosa - Bahia</span>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form action="https://formspree.io/f/mjkoaozb" method="POST" class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Seu Nome" required>
                     </div>

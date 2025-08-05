@@ -129,3 +129,20 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Tema claro/escuro
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', function () {
+        body.classList.toggle('light-theme');
+        this.classList.toggle('active');
+    });
+
+    // Verificar tema preferido do usuário
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.classList.add('dark-theme');
+        themeToggle.classList.add('active');
+    }
+});
+// Fim do script.js
