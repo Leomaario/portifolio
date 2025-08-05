@@ -852,16 +852,11 @@ li a:hover {
         border: none;
         padding: 0;
         margin: 0;
-        /* Estilos de texto */
         font-family: inherit;
-        /* Usa a mesma fonte do resto do site */
         font-size: 0.9rem;
-        /* Tamanho da fonte */
         font-weight: 600;
         color: var(--accent-primary);
         text-align: left;
-        /* Garante alinhamento */
-        /* Funcionalidade e transição */
         cursor: pointer;
         margin-top: 1rem;
         display: inline-block;
