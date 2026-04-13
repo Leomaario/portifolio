@@ -331,17 +331,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Seção de Projetos */
 .projects-section {
     min-height: 70vh;
@@ -358,10 +347,11 @@ body {
 
 .project-card {
     border-radius: 15px;
-    height: 150px;
+    height: 350px;
     width: 500px;
+    background-position: left center;
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
@@ -371,6 +361,17 @@ body {
     transition: all 0.3s ease;
     border: 2px solid var(--);
     box-shadow: 0 1px 20px var(--accent-secondary);
+    animation: project-card-pan 30s linear infinite;
+    will-change: background-position;
+}
+
+@keyframes project-card-pan {
+    0%, 100% {
+        background-position: left center;
+    }
+    50% {
+        background-position: right center;
+    }
 }
 
 .project-card:hover {
